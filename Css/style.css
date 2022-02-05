@@ -475,7 +475,7 @@ header .container .content-section-header nav.navigation ul:last-child li:last-c
 
     .about .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 540px 1fr;
         align-items: center;
         gap: 40px;
     }
@@ -560,20 +560,30 @@ header .container .content-section-header nav.navigation ul:last-child li:last-c
     gap: 20px;
 }
 
-.appartment .container .content-section-appartment .card .text-card>div>div .shower i,
-.appartment .container .content-section-appartment .card .text-card>div>div .bed i {
-    margin-right: 5px;
-    color: #919eb1;
+.appartment .container .content-section-appartment .card .text-card>div>div>div {
+    cursor: pointer;
 }
 
-.appartment .container .content-section-appartment .card .text-card>div>div .shower span,
-.appartment .container .content-section-appartment .card .text-card>div>div .bed span {
+.appartment .container .content-section-appartment .card .text-card>div>div>div i {
+    margin-right: 5px;
+    color: #919eb1;
+    transition: color var(--main-transition);
+}
+
+.appartment .container .content-section-appartment .card .text-card>div>div>div span {
     color: #919eb1;
     font-weight: var(--regular-weight);
     font-size: var(--main-font-size);
     line-height: 3.84;
     letter-spacing: -0.325px;
+    transition: color var(--main-transition);
 }
+
+.appartment .container .content-section-appartment .card .text-card>div>div>div:hover span,
+.appartment .container .content-section-appartment .card .text-card>div>div>div:hover i {
+    color: var(--main-color);
+}
+
 
 @media (min-width: 992px) {
     .appartment .container .content-section-appartment .card .text-card address {
@@ -1115,7 +1125,7 @@ footer .container .content-section-footer .contact-us form svg {
     position: absolute;
     right: 40px;
     top: 50%;
-    transform: translateX(50%);
+    transform: translate(50%, -50%);
 }
 
 footer .container .content-section-footer .contact-us form input[type="submit"]:hover,
