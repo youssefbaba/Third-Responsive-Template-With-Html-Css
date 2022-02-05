@@ -1008,10 +1008,12 @@ header .container .content-section-header nav.navigation ul:last-child li:last-c
 
     .advertising .container .content-section-advertising section .text-advertising {
         flex: 1;
+        text-align: left;
     }
 
     .advertising .container .content-section-advertising section.section-two .text-advertising {
         order: -1;
+        text-align: right;
     }
 
     .advertising .container .content-section-advertising section .image-advertising .location {
@@ -1029,8 +1031,7 @@ header .container .content-section-header nav.navigation ul:last-child li:last-c
         font-size: 20px;
     }
 
-    .advertising .container .content-section-advertising section .text-advertising h4,
-    .advertising .container .content-section-advertising section .text-advertising p {
+    .advertising .container .content-section-advertising section .text-advertising h4 {
         font-size: 25px;
         line-height: 2;
     }
@@ -1040,6 +1041,8 @@ header .container .content-section-header nav.navigation ul:last-child li:last-c
     }
 
     .advertising .container .content-section-advertising section .text-advertising p {
+        font-size: 15px;
+        line-height: 2;
         letter-spacing: -0.375px;
     }
 
