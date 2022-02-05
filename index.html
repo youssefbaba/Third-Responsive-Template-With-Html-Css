@@ -22,74 +22,71 @@
 </head>
 
 <body>
-    <!-- Start Home Page -->
-    <div class="home-page">
-        <!-- Start Header -->
-        <header>
-            <div class="container">
-                <div class="content-section-header">
-                    <a href="#" class="logo"><img src="images/luxestate.png" alt="logo"></a>
-                    <i class="fas fa-bars" onclick="myFunction()"></i>
-                    <nav id="show" class="navigation">
-                        <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#appartments  ">Appartments </a></li>
-                            <li><a href="#how-it-work">How It Work</a></li>
-                            <li><a href="#agents">Agents</a></li>
-                            <li><a href="#contact-us">Contact Us</a></li>
-                            <li><a href="#about">About</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#join-us">Join Us</a></li>
-                            <li><a href="#getting-started">Getting Started</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <!-- End Header -->
-        <!-- Start Landing -->
-        <div class="landing">
-            <div class="container">
-                <div class="content-section-landing">
-                    <div class="backg-image">
-                    </div>
-                    <div class="title-form">
-                        <h2>
-                            Find Your New <br>
-                            Modern Apartment
-                        </h2>
-                        <form action="">
-                            <i class="fas fa-search"></i>
-                            <input type="search" name="search-location" placeholder="Search locations">
-                            <input type="submit" value="Search">
-                        </form>
-                    </div>
-                    <div class="info">
-                        <div class="phone">
-                            <i class="fas fa-phone-alt"></i>
-                            <p>(000) 123-4567</p>
-                        </div>
-                        <div class="location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Melbourne,Australia</p>
-                        </div>
-                    </div>
-                    <div class="scroll-down">
-                        <p>Sroll Down </p>
-                        <!-- <div class="arrow">
-                            <div class="line"></div>
-                            <div class="point"></div>
-                        </div> -->
-                    </div>
-                </div>
+    <!-- Start Header -->
+    <header>
+        <div class="container">
+            <div class="content-section-header">
+                <a href="#" class="logo"><img src="images/luxestate.png" alt="logo"></a>
+                <i class="fas fa-bars" onclick="myFunction()"></i>
+                <nav id="show" class="navigation">
+                    <ul>
+                        <li><a href="#about" onclick="Hide()">About</a></li>
+                        <li><a href="#appartment" onclick="Hide()">Appartments </a></li>
+                        <li><a href="#how-it-work" onclick="Hide()">How It Work</a></li>
+                        <li><a href="#agents" onclick="Hide()">Agents</a></li>
+                        <li><a href="#contact-us" onclick="Hide()">Contact Us</a></li>
+                        <li><a href="#about" onclick="Hide()">About</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#join-us">Join Us</a></li>
+                        <li><a href="#getting-started">Getting Started</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <!-- End Landing -->
+    </header>
+    <!-- End Header -->
+    <!-- Start Landing -->
+    <div class="landing">
+        <div class="container">
+            <div class="content-section-landing">
+                <div class="backg-image">
+                </div>
+                <div class="title-form">
+                    <h2>
+                        Find Your New <br>
+                        Modern Apartment
+                    </h2>
+                    <form action="">
+                        <i class="fas fa-search"></i>
+                        <input type="search" name="search-location" placeholder="Search locations">
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+                <div class="info">
+                    <div class="phone">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>(000) 123-4567</p>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Melbourne,Australia</p>
+                    </div>
+                </div>
+                <a class="scroll-down" href="#about">
+                    <p>Sroll Down</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px"
+                        height="30px">
+                        <path fill-rule="evenodd" fill="#919eb1"
+                            d="M12.568,22.821 L11.861,22.114 C11.812,22.065 11.733,22.065 11.685,22.114 L7.124,26.675 L7.124,1.104 C7.124,1.036 7.068,0.980 6.999,0.980 L6.000,0.980 C5.931,0.980 5.875,1.036 5.875,1.104 L5.875,26.685 L1.314,22.124 C1.265,22.075 1.186,22.075 1.138,22.124 L0.432,22.831 C0.383,22.879 0.383,22.959 0.432,23.007 L6.406,28.983 C6.455,29.032 6.535,29.032 6.584,28.983 L7.290,28.276 L7.290,28.275 L12.568,22.998 C12.617,22.949 12.617,22.870 12.568,22.821 Z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
-    <!-- End Home Page -->
-    <!-- Start Company Statistics -->
-    <div class="company-statistic">
+    <!-- End Landing -->
+    <!-- Start About-->
+    <div class="about" id="about">
         <div class="container">
             <!-- Start Desc Company -->
             <div class="desc-company">
@@ -142,9 +139,9 @@
             <!-- End Statistic  -->
         </div>
     </div>
-    <!-- End Company Statistics -->
+    <!-- Start About-->
     <!-- Start Appartments -->
-    <div class="appartment">
+    <div class="appartment" id="appartment">
         <div class="container">
             <div class="main-heading">
                 <h2>More Then 500+ <br>
@@ -286,7 +283,7 @@
     </div>
     <!-- End Appartments -->
     <!-- Start How It Works -->
-    <div class="how-it-work">
+    <div class="how-it-work" id="how-it-work">
         <div class="container">
             <div class="main-heading">
                 <h2>How it works?</h2>
@@ -316,8 +313,7 @@
                     </svg>
                     <div class="text">
                         <h4><span>02</span>Find Appartment</h4>
-                        <p>In this space market-facing, yet UI work flows , or bake it in. Red flag we neef the day.
-                        </p>
+                        <p>In this space market-facing, yet UI work flows , or bake it in. Red flag we neef the day.</p>
                         <a href="#">Find Appartment</a>
                     </div>
                 </div>
@@ -377,12 +373,14 @@
     </div>
     <!-- End Services -->
     <!-- Start Agents -->
-    <div class="agents">
+    <div class="agents" id="agents">
         <div class="container">
             <div class="main-heading">
                 <h2>Meet Our Agents</h2>
-                <p>In this space market-facing, yet UI work flows , or bake it in. Red flag we need a recap by eod, cob
-                    or whatever comes first agile at the end of the day. </p>
+                <p>
+                    In this space market-facing, yet UI work flows , or bake it in. Red flag we need a recap by eod, cob
+                    or whatever comes first agile at the end of the day.
+                </p>
             </div>
             <div class="content-section-agents">
                 <div class="card">
@@ -442,7 +440,7 @@
         <div class="container">
             <div class="content-section-advertising">
                 <section class="section-one">
-                    <div class="image-adds">
+                    <div class="image-advertising">
                         <img src="images/add1.png" alt="advertising-01">
                         <div class="location  location-general">
                             <i class="fas fa-map-marker-alt"></i>
@@ -459,7 +457,7 @@
                     </div>
                 </section>
                 <section class="section-two">
-                    <div class="image-adds">
+                    <div class="image-advertising">
                         <img src="images/add2.png" alt="advertising-02">
                         <div class="location location-special">
                             <i class="fas fa-map-marker-alt"></i>
@@ -477,7 +475,7 @@
                     </div>
                 </section>
                 <section class="section-three">
-                    <div class="image-adds">
+                    <div class="image-advertising">
                         <img src="images/add3.png" alt="advertising-03">
                         <div class="location  location-general">
                             <i class="fas fa-map-marker-alt"></i>
@@ -502,7 +500,7 @@
     <footer>
         <div class="container">
             <div class="content-section-footer">
-                <div class="part-top">
+                <div class="contact-us" id="contact-us">
                     <h2>
                         luxestate <br>
                         Explore Real Estate
@@ -521,7 +519,7 @@
                     <div class="copyright">
                         <a href="#"><img src="images/logo-footer.png" alt="logo"></a>
                         <p>
-                            &#169; 2019 - luxestate, <br>
+                            &#169; 2022 - luxestate, <br>
                             All Right Reserved
                         </p>
                     </div>
@@ -563,6 +561,11 @@
     <!-- End Footer -->
     <script>
         function myFunction() {
+            var element = document.getElementById("show");
+            element.classList.toggle("mystyle");
+        }
+
+        function Hide() {
             var element = document.getElementById("show");
             element.classList.toggle("mystyle");
         }

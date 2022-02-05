@@ -11,6 +11,10 @@
     --white-color: #ffffff;
     --secondary-color: #1f373d;
     --background-section: #f6f5f4;
+    --main-transition: 0.3s;
+    --regular-weight: 400;
+    --semibold-weight: 600;
+    --main-font-size: 13px;
 }
 
 html {
@@ -53,28 +57,25 @@ ul {
 
 /* Start Compenent */
 .main-heading {
-    margin-bottom: 60px;
+    margin-bottom: var(--section-padding);
     text-align: center;
+    color: var(--secondary-color);
 }
 
 .main-heading h2 {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 30px;
     line-height: 1.66;
     letter-spacing: -0.75px;
-    color: var(--secondary-color);
 }
 
 .main-heading p {
     max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
-    color: var(--secondary-color);
-    margin-top: 10px;
+    margin: 10px auto 0 auto;
 }
 
 @media (min-width: 992px) {
@@ -101,44 +102,38 @@ ul {
 
 /* End Global Css Rules */
 
-/* Start Home Page */
 /* Start Header */
-.home-page {
-    padding-bottom: 60px;
-    background-color: var(--white-color);
-}
-
-.home-page header {
+header {
     background-color: var(--white-color);
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 9999;
 }
 
-.home-page header .container .content-section-header {
+header .container .content-section-header {
+    background-color: var(--white-color);
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.home-page header .container .content-section-header .logo {
+header .container .content-section-header .logo {
     display: block;
     width: fit-content;
 }
 
-.home-page header .container .content-section-header .logo img {
+header .container .content-section-header .logo img {
     height: 20px;
 }
 
-.home-page header .container .content-section-header i {
+header .container .content-section-header i {
     cursor: pointer;
     font-size: 25px;
 }
 
-.home-page header .container .content-section-header nav.navigation {
-    background-color: white;
+header .container .content-section-header nav.navigation {
+    background-color: var(--white-color);
     flex-direction: column;
     gap: 40px;
     position: absolute;
@@ -150,26 +145,26 @@ ul {
     display: none;
 }
 
-.home-page header .container .content-section-header nav.mystyle {
+header .container .content-section-header nav.mystyle {
     display: flex;
 }
 
-.home-page header .container .content-section-header nav.navigation ul li a {
+header .container .content-section-header nav.navigation ul li a {
     display: block;
     text-decoration: none;
     color: var(--secondary-color);
     padding: 18px 15px;
-    font-weight: 400;
-    font-size: 13px;
-    transition: all 0.3s;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
+    transition: color var(--main-transition), background-color var(--main-transition);
 }
 
-.home-page header .container .content-section-header nav.navigation ul:first-child li a:hover,
-.home-page header .container .content-section-header nav.navigation ul:last-child li:first-child a:hover {
+header .container .content-section-header nav.navigation ul:first-child li a:hover,
+header .container .content-section-header nav.navigation ul:last-child li:first-child a:hover {
     color: var(--main-color);
 }
 
-.home-page header .container .content-section-header nav.navigation ul:last-child li:last-child a {
+header .container .content-section-header nav.navigation ul:last-child li:last-child a {
     width: 50%;
     margin: 0 auto;
     background-color: var(--main-color);
@@ -177,24 +172,24 @@ ul {
     border-radius: 7px;
 }
 
-.home-page header .container .content-section-header nav.navigation ul:last-child li:last-child a:hover {
+header .container .content-section-header nav.navigation ul:last-child li:last-child a:hover {
     background-color: transparent;
 }
 
 @media (min-width: 992px) {
-    .home-page header .container .content-section-header .logo {
+    header .container .content-section-header .logo {
         flex-basis: 117px;
     }
 
-    .home-page header .container .content-section-header .logo img {
+    header .container .content-section-header .logo img {
         width: 100%;
     }
 
-    .home-page header .container .content-section-header i {
+    header .container .content-section-header i {
         display: none;
     }
 
-    .home-page header .container .content-section-header nav.navigation {
+    header .container .content-section-header nav.navigation {
         flex-basis: calc(97% - 117px);
         display: flex;
         flex-direction: row;
@@ -205,31 +200,28 @@ ul {
         padding: 0;
     }
 
-    .home-page header .container .content-section-header nav ul {
+    header .container .content-section-header nav ul {
         display: flex;
         align-items: center;
     }
 
-    .home-page header .container .content-section-header nav.navigation ul:last-child li:last-child a {
+    header .container .content-section-header nav.navigation ul:last-child li:last-child a {
         width: fit-content;
         margin: 0 0 0 15px;
     }
 }
 
 @media (min-width: 1200px) {
-    .home-page header .container .content-section-header nav.navigation {
+    header .container .content-section-header nav.navigation {
         flex-basis: calc(90% - 150px);
     }
 }
 
 /* End Header */
 /* Start Landing */
-.landing {
-    margin-top: 100px;
-}
-
 .landing .container .content-section-landing {
     position: relative;
+    top: 100px;
 }
 
 .landing .container .content-section-landing .backg-image {
@@ -244,14 +236,14 @@ ul {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    color: var(--secondary-color);
 }
 
 .landing .container .content-section-landing .title-form h2 {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 40px;
     line-height: 1.95;
     letter-spacing: -1px;
-    color: var(--secondary-color);
 }
 
 .landing .container .content-section-landing .title-form form {
@@ -260,12 +252,10 @@ ul {
     display: flex;
     margin-top: 40px;
     position: relative;
-    width: 100%;
 }
 
 .landing .container .content-section-landing .title-form form i {
     font-size: 15px;
-    color: var(--secondary-color);
     position: absolute;
     left: 10px;
     top: 50%;
@@ -273,8 +263,8 @@ ul {
 }
 
 .landing .container .content-section-landing .title-form form input::placeholder {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     letter-spacing: -0.325px;
     color: var(--secondary-color);
 }
@@ -284,22 +274,22 @@ ul {
 }
 
 .landing .container .content-section-landing .title-form form input[type="search"] {
-    padding: 20px 0 20px 40px;
     flex: 1;
+    padding: 20px 0 20px 40px;
     border: 1px solid var(--white-color);
     caret-color: var(--secondary-color);
-    font-size: 13px;
+    font-size: var(--main-font-size);
 }
 
 .landing .container .content-section-landing .title-form form input[type="submit"] {
-    padding: 20px;
     flex-basis: 100px;
+    padding: 20px;
     background-color: var(--main-color);
     border: 1px solid var(--main-color);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color var(--main-transition), border-color var(--main-transition);
     font-weight: 500;
-    font-size: 13px;
+    font-size: var(--main-font-size);
     letter-spacing: -0.325px;
     color: var(--secondary-color);
 }
@@ -316,12 +306,12 @@ ul {
     bottom: 0;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     background-color: var(--main-color);
 }
 
 .landing .container .content-section-landing .info>div {
     display: flex;
-    align-items: center;
     gap: 20px;
     padding: 25px 10px;
 }
@@ -332,10 +322,10 @@ ul {
 }
 
 .landing .container .content-section-landing .info>div p {
-    font-weight: 600;
-    font-size: 13px;
-    color: var(--secondary-color);
+    font-weight: var(--semibold-weight);
+    font-size: var(--main-font-size);
     letter-spacing: -0.325px;
+    color: var(--secondary-color);
 }
 
 .landing .container .content-section-landing .scroll-down {
@@ -353,9 +343,10 @@ ul {
     }
 
     .landing .container .content-section-landing .scroll-down {
+        text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         position: absolute;
         left: 0;
         bottom: 0;
@@ -364,34 +355,11 @@ ul {
 
     .landing .container .content-section-landing .scroll-down p {
         font-weight: 500;
-        font-size: 13px;
+        font-size: var(--main-font-size);
         letter-spacing: -0.325px;
         color: #919eb1;
         position: relative;
-        bottom: 40px;
-        display: flex;
-    }
-
-    .landing .container .content-section-landing .scroll-down p::before {
-        content: "";
-        position: absolute;
-        left: calc(50% - 1px);
-        transform: translateX(-50%);
-        top: calc(100% + 10px);
-        height: 20px;
-        background-color: #919eb1;
-        width: 2px;
-    }
-
-    .landing .container .content-section-landing .scroll-down p::after {
-        content: "";
-        position: absolute;
-        border-style: solid;
-        border-width: 10px 5px 5px 5px;
-        border-color: #919eb1 transparent transparent transparent;
-        bottom: -45px;
-        left: calc(50% - 1px);
-        transform: translateX(-50%);
+        left: 1px;
     }
 }
 
@@ -409,7 +377,7 @@ ul {
 
     .landing .container .content-section-landing .title-form form input::placeholder,
     .landing .container .content-section-landing .scroll-down p,
-    .landing .container .content-section-landing .title-form form input[type="search"] {
+    .landing .container .content-section-landing .title-form form input {
         font-size: 15px;
         letter-spacing: -0.375px;
     }
@@ -420,8 +388,6 @@ ul {
 
     .landing .container .content-section-landing .title-form form input[type="submit"] {
         padding: 25px;
-        font-size: 15px;
-        letter-spacing: -0.375px;
     }
 
     .landing .container .content-section-landing .info {
@@ -434,105 +400,103 @@ ul {
     }
 }
 
-
 /* End Landing */
-/* End Home Page */
-
-/* Start Company Statistics */
+/* Start About */
 /*   Start Desc Company */
-.company-statistic {
-    padding-top: var(--section-padding);
+.about {
+    padding-top: calc(var(--section-padding) * 2);
     padding-bottom: var(--section-padding);
+    margin-top: 100px;
     background-color: var(--white-color);
 }
 
-.company-statistic .desc-company .content-section-company {
+.about .desc-company .content-section-company {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     text-align: center;
+    color: var(--secondary-color);
 }
 
-.company-statistic .desc-company .content-section-company p {
-    font-weight: 400;
-    font-size: 13px;
+.about .desc-company .content-section-company p {
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
-    color: var(--secondary-color);
 }
 
 /*  End Desc Company */
 /* Start Statistic */
-.company-statistic .statistic {
+.about .statistic {
     margin-top: 40px;
 }
 
-.company-statistic .statistic .content-section-statistic {
+.about .statistic .content-section-statistic {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-.company-statistic .statistic .content-section-statistic .box {
+.about .statistic .content-section-statistic .box {
     background-color: var(--background-section);
     text-align: center;
     padding: 30px;
 }
 
-.company-statistic .statistic .content-section-statistic .box span {
+.about .statistic .content-section-statistic .box span {
     display: block;
 }
 
-.company-statistic .statistic .content-section-statistic .box span:nth-child(1) {
-    font-weight: 600;
+.about .statistic .content-section-statistic .box span:nth-child(1) {
+    font-weight: var(--semibold-weight);
     font-size: 40px;
     line-height: 1.25;
     letter-spacing: -1px;
     color: var(--main-color);
 }
 
-.company-statistic .statistic .content-section-statistic .box span:nth-child(2) {
-    font-weight: 600;
+.about .statistic .content-section-statistic .box span:nth-child(2) {
+    font-weight: var(--semibold-weight);
     font-size: 14px;
     line-height: 3.57;
     letter-spacing: -0.35px;
 }
 
 @media (min-width: 768px) {
-    .company-statistic .statistic .content-section-statistic {
+    .about .statistic .content-section-statistic {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 992px) {
-    .company-statistic .statistic {
+    .about .statistic {
         margin-top: 0;
     }
 
-    .company-statistic .container {
+    .about .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        gap: 20px;
+        gap: 40px;
     }
 
-    .company-statistic .desc-company .content-section-company {
+    .about .desc-company .content-section-company {
         text-align: left;
     }
 
-    .company-statistic .desc-company .content-section-company p {
+    .about .desc-company .content-section-company p {
         font-size: 15px;
         line-height: 2;
         letter-spacing: -0.375px;
     }
 
-    .company-statistic .statistic .content-section-statistic .box span:nth-child(1) {
+    .about .statistic .content-section-statistic .box span:nth-child(1) {
         font-size: 50px;
         line-height: 1;
         letter-spacing: -1.25px;
     }
 
-    .company-statistic .statistic .content-section-statistic .box span:nth-child(2) {
+    .about .statistic .content-section-statistic .box span:nth-child(2) {
         font-size: 16px;
         line-height: 3.125;
         letter-spacing: -0.4px;
@@ -541,7 +505,7 @@ ul {
 
 /* End Statistic */
 
-/* End Company Statistics */
+/* End About */
 /* Start Appartments  */
 .appartment {
     padding-top: var(--section-padding);
@@ -570,7 +534,7 @@ ul {
 }
 
 .appartment .container .content-section-appartment .card .text-card address {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 15px;
     letter-spacing: -0.375px;
     color: var(--secondary-color);
@@ -584,7 +548,7 @@ ul {
 }
 
 .appartment .container .content-section-appartment .card .text-card>div span.price {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 18px;
     line-height: 2.77;
     letter-spacing: -0.45px;
@@ -605,8 +569,8 @@ ul {
 .appartment .container .content-section-appartment .card .text-card>div>div .shower span,
 .appartment .container .content-section-appartment .card .text-card>div>div .bed span {
     color: #919eb1;
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 3.84;
     letter-spacing: -0.325px;
 }
@@ -633,16 +597,16 @@ ul {
 
 .appartment .container .footer a {
     display: block;
+    width: fit-content;
     text-decoration: none;
     background-color: var(--white-color);
     color: var(--secondary-color);
-    width: fit-content;
     padding: 25px;
     margin: 40px auto 0;
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 15px;
     letter-spacing: -0.375px;
-    transition: background-color 0.3s;
+    transition: background-color var(--main-transition);
 }
 
 .appartment .container .footer a:hover {
@@ -667,18 +631,16 @@ ul {
     background-color: var(--white-color);
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
         rgba(17, 17, 26, 0.05) 0px 8px 32px;
-    color: var(--secondary-color);
-    transition: all 0.3s;
+    transition: color var(--main-transition), background-color var(--main-transition);
 }
 
 .how-it-work .container .content-section-how-it-work .box:hover {
-    color: var(--white-color);
     background-color: var(--main-color);
 }
 
 .how-it-work .container .content-section-how-it-work .box svg {
     fill: var(--secondary-color);
-    transition: fill 0.3s;
+    transition: fill var(--main-transition);
 }
 
 .how-it-work .container .content-section-how-it-work .box:hover svg {
@@ -686,11 +648,16 @@ ul {
 }
 
 .how-it-work .container .content-section-how-it-work .box .text {
+    color: var(--secondary-color);
     padding: 0 40px 40px 40px;
 }
 
+.how-it-work .container .content-section-how-it-work .box:hover .text {
+    color: var(--white-color);
+}
+
 .how-it-work .container .content-section-how-it-work .box .text h4 {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 18px;
     line-height: 3.5;
     letter-spacing: -0.45px;
@@ -704,8 +671,8 @@ ul {
 }
 
 .how-it-work .container .content-section-how-it-work .box .text p {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
 }
@@ -716,12 +683,12 @@ ul {
     width: fit-content;
     padding-left: 5px;
     color: var(--secondary-color);
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: var(--semibold-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
     position: relative;
-    transition: color 0.3s;
+    transition: color var(--main-transition);
 }
 
 .how-it-work .container .content-section-how-it-work .box:hover .text a {
@@ -736,7 +703,7 @@ ul {
     height: 3px;
     top: 100%;
     left: 0;
-    transition: background-color 0.3s;
+    transition: background-color var(--main-transition);
 }
 
 .how-it-work .container .content-section-how-it-work .box:hover .text a::before {
@@ -746,7 +713,6 @@ ul {
 @media (min-width: 768px) {
     .how-it-work .container .content-section-how-it-work {
         grid-template-columns: repeat(2, 1fr);
-
     }
 }
 
@@ -792,7 +758,7 @@ ul {
 }
 
 .services .container .content-section-services .desc-services .service h4 {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 20px;
     line-height: 2.5;
     letter-spacing: -0.55px;
@@ -800,8 +766,8 @@ ul {
 }
 
 .services .container .content-section-services .desc-services .service p {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
 }
@@ -872,17 +838,14 @@ ul {
 
 .agents .container .content-section-agents .card .text-card {
     padding: 20px;
+    color: var(--secondary-color);
 }
 
 .agents .container .content-section-agents .card .text-card p,
 .agents .container .content-section-agents .card .text-card>div span.name {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 15px;
     letter-spacing: -0.375px;
-}
-
-.agents .container .content-section-agents .card .text-card p {
-    color: var(--secondary-color);
 }
 
 .agents .container .content-section-agents .card .text-card>div {
@@ -903,8 +866,8 @@ ul {
 
 .agents .container .content-section-agents .card .text-card>div>div a {
     text-decoration: none;
-    color: var(--section-padding);
-    transition: color 0.3s;
+    color: var(--secondary-color);
+    transition: color var(--main-transition);
 }
 
 .agents .container .content-section-agents .card .text-card>div>div a:hover {
@@ -926,7 +889,6 @@ ul {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
     background-color: var(--white-color);
-    margin-bottom: 60px;
 }
 
 .advertising .container .content-section-advertising {
@@ -938,53 +900,52 @@ ul {
 .advertising .container .content-section-advertising section {
     display: flex;
     align-items: center;
-    gap: 80px;
     flex-wrap: wrap;
+    gap: 80px;
 }
 
-.advertising .container .content-section-advertising section .image-adds {
+.advertising .container .content-section-advertising section .image-advertising {
     flex-basis: 100%;
     position: relative;
 }
 
-.advertising .container .content-section-advertising section .image-adds img {
+.advertising .container .content-section-advertising section .image-advertising img {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-.advertising .container .content-section-advertising section .image-adds .location {
+.advertising .container .content-section-advertising section .image-advertising .location {
     position: absolute;
+    background-color: var(--main-color);
+    width: 300px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background-color: var(--main-color);
-    width: 300px;
-    height: 60px;
-    line-height: 60px;
 }
 
-.advertising .container .content-section-advertising section .image-adds .location-general {
+.advertising .container .content-section-advertising section .image-advertising .location-general {
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 50%);
 }
 
-.advertising .container .content-section-advertising section .image-adds .location-special {
+.advertising .container .content-section-advertising section .image-advertising .location-special {
     right: 0;
     bottom: 0;
     transform: translateY(50%);
 }
 
-.advertising .container .content-section-advertising section .image-adds .location p {
+.advertising .container .content-section-advertising section .image-advertising .location p {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     letter-spacing: -0.375px;
     color: var(--secondary-color);
 }
 
-.advertising .container .content-section-advertising section .image-adds .location i {
+.advertising .container .content-section-advertising section .image-advertising .location i {
     color: var(--white-color);
     font-size: 16px;
 }
@@ -999,7 +960,7 @@ ul {
 } */
 
 .advertising .container .content-section-advertising section .text-advertising h4 {
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 20px;
     line-height: 2.5;
     letter-spacing: -0.5px;
@@ -1008,27 +969,28 @@ ul {
 }
 
 .advertising .container .content-section-advertising section .text-advertising p {
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     line-height: 2.30;
     letter-spacing: -0.325px;
     color: var(--secondary-color);
 }
 
-.advertising .container .content-section-advertising section .text-advertising a {
+.advertising .container .content-section-advertising section.section-three .text-advertising a {
     display: block;
     text-decoration: none;
     background-color: var(--secondary-color);
     color: var(--white-color);
-    font-weight: 600;
+    font-weight: var(--semibold-weight);
     font-size: 15px;
     letter-spacing: -0.375px;
     width: 200px;
     height: 60px;
-    line-height: 60px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px auto 0 auto;
-    transition: background-color 0.3s;
+    transition: background-color var(--main-transition);
 }
 
 .advertising .container .content-section-advertising section .text-advertising a:hover {
@@ -1037,10 +999,10 @@ ul {
 
 @media (min-width: 992px) {
     .advertising {
-        margin-bottom: 60px;
+        margin-bottom: var(--section-padding);
     }
 
-    .advertising .container .content-section-advertising section .image-adds {
+    .advertising .container .content-section-advertising section .image-advertising {
         flex-basis: 540px;
     }
 
@@ -1052,39 +1014,38 @@ ul {
         order: -1;
     }
 
-    .advertising .container .content-section-advertising section .image-adds .location {
+    .advertising .container .content-section-advertising section .image-advertising .location {
         width: 330px;
         height: 80px;
-        line-height: 80px;
     }
 
-    .advertising .container .content-section-advertising section .image-adds .location p {
+    .advertising .container .content-section-advertising section .image-advertising .location p,
+    .advertising .container .content-section-advertising section .text-advertising a {
         font-size: 18px;
         letter-spacing: -0.45px;
     }
 
-    .advertising .container .content-section-advertising section .image-adds .location i {
+    .advertising .container .content-section-advertising section .image-advertising .location i {
         font-size: 20px;
     }
 
-    .advertising .container .content-section-advertising section .text-advertising h4 {
+    .advertising .container .content-section-advertising section .text-advertising h4,
+    .advertising .container .content-section-advertising section .text-advertising p {
         font-size: 25px;
         line-height: 2;
+    }
+
+    .advertising .container .content-section-advertising section .text-advertising h4 {
         letter-spacing: -0.625px;
     }
 
     .advertising .container .content-section-advertising section .text-advertising p {
-        font-size: 15px;
-        line-height: 2;
         letter-spacing: -0.375px;
     }
 
     .advertising .container .content-section-advertising section .text-advertising a {
-        font-size: 18px;
-        letter-spacing: -0.45px;
         width: 240px;
         height: 70px;
-        line-height: 70px;
         margin: 20px 0 0 0;
     }
 }
@@ -1094,10 +1055,10 @@ ul {
 footer {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
-    background-color: #1f373d;
+    background-color: var(--secondary-color);
 }
 
-footer .container .content-section-footer .part-top {
+footer .container .content-section-footer .contact-us {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1108,55 +1069,54 @@ footer .container .content-section-footer .part-top {
     text-align: center;
 }
 
-footer .container .content-section-footer .part-top h2 {
-    font-weight: 600;
-    /* font-size: 40px; */
+footer .container .content-section-footer .contact-us h2 {
+    font-weight: var(--semibold-weight);
     font-size: 30px;
-    letter-spacing: -1px;
+    letter-spacing: -0.75px;
     color: var(--white-color);
 }
 
-footer .container .content-section-footer .part-top form {
+footer .container .content-section-footer .contact-us form {
     display: flex;
     width: 100%;
     position: relative;
 }
 
-footer .container .content-section-footer .part-top form input:focus {
+footer .container .content-section-footer .contact-us form input:focus {
     outline: none;
 }
 
-footer .container .content-section-footer .part-top form input::placeholder {
+footer .container .content-section-footer .contact-us form input::placeholder {
     color: #919eb1;
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: -0.375px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
+    letter-spacing: -0.325px;
 }
 
-footer .container .content-section-footer .part-top form input[type="email"] {
+footer .container .content-section-footer .contact-us form input[type="email"] {
     flex: 1;
     padding: 25px 0 25px 25px;
     border: 1px solid var(--white-color);
     caret-color: var(--secondary-color);
 }
 
-footer .container .content-section-footer .part-top form input[type="submit"] {
+footer .container .content-section-footer .contact-us form input[type="submit"] {
     width: 80px;
     padding: 25px;
     background-color: var(--white-color);
     border: 1px solid var(--white-color);
-    transition: 0.3s;
+    transition: background-color var(--main-transition), border-color var(--main-transition);
 }
 
-footer .container .content-section-footer .part-top form svg {
+footer .container .content-section-footer .contact-us form svg {
     position: absolute;
     right: 40px;
     top: 50%;
     transform: translateX(50%);
 }
 
-footer .container .content-section-footer .part-top form input[type="submit"]:hover,
-footer .container .content-section-footer .part-top form input[type="submit"]:focus {
+footer .container .content-section-footer .contact-us form input[type="submit"]:hover,
+footer .container .content-section-footer .contact-us form input[type="submit"]:focus {
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
@@ -1179,7 +1139,7 @@ footer .container .content-section-footer .part-bottom .copyright a img {
 }
 
 footer .container .content-section-footer .part-bottom .copyright p {
-    font-weight: 400;
+    font-weight: var(--regular-weight);
     font-size: 14px;
     line-height: 1.46;
     color: var(--white-color);
@@ -1187,8 +1147,8 @@ footer .container .content-section-footer .part-bottom .copyright p {
 
 footer .container .content-section-footer .part-bottom .division h4 {
     text-transform: uppercase;
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     color: #919eb1;
     margin-bottom: 20px;
 }
@@ -1197,8 +1157,8 @@ footer .container .content-section-footer .part-bottom .division ul li a {
     display: block;
     text-decoration: none;
     padding: 10px 0;
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: var(--regular-weight);
+    font-size: var(--main-font-size);
     color: var(--white-color);
 }
 
@@ -1209,7 +1169,7 @@ footer .container .content-section-footer .part-bottom .division ul li a {
         text-align: left;
     }
 
-    footer .container .content-section-footer .part-top {
+    footer .container .content-section-footer .contact-us {
         text-align: left;
     }
 
@@ -1240,23 +1200,41 @@ footer .container .content-section-footer .part-bottom .division ul li a {
 }
 
 @media (min-width: 992px) {
-    footer .container .content-section-footer .part-top {
+    footer .container .content-section-footer .contact-us {
         flex-direction: row;
         gap: 0;
         justify-content: space-between;
         align-items: center;
     }
 
-    footer .container .content-section-footer .part-top h2 {
+    footer .container .content-section-footer .contact-us h2 {
         flex-basis: 380px;
+        font-size: 40px;
+        letter-spacing: -1px;
     }
 
-    footer .container .content-section-footer .part-top form {
+
+    footer .container .content-section-footer .contact-us form {
         flex-basis: 500px;
+    }
+
+    footer .container .content-section-footer .contact-us form input::placeholder {
+        font-size: 15px;
+        letter-spacing: -0.375px;
     }
 
     footer .container .content-section-footer .part-bottom {
         grid-template-columns: repeat(12, 1fr);
+    }
+
+    footer .container .content-section-footer .part-bottom .copyright p {
+        font-size: 16px;
+        line-height: 1.29;
+    }
+
+    footer .container .content-section-footer .part-bottom .division h4,
+    footer .container .content-section-footer .part-bottom .division ul li a {
+        font-size: 15px;
     }
 
     footer .container .content-section-footer .part-bottom .copyright {
